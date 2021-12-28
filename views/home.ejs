@@ -13,6 +13,10 @@
                        <p><%= i.name %></p>
                        <p> <%= i.number %></p>
                 </li>
+                <!-- on click passing this query to route -->
+                <div>
+                    <button onclick="location.href='/delete-contact/?phone=<%=i.number%>'" > Delete </button>
+                </div>
 
                 <% } %>
                  </ul>
