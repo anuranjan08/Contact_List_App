@@ -3,21 +3,34 @@
        <title>
            <%= title %>
        </title>
+       <script src="https://kit.fontawesome.com/64f65d8784.js" crossorigin="anonymous"></script>
        <link rel="stylesheet" href="/home.css">
      </head>
      <body>
-         <h1>:: MY CONTACT LIST ::</h1>
-         <div>
-             <ul>
+         <div  id="heading">
+             <h1>
+            <i class="fas fa-address-book"></i>
+             MY CONTACT LIST </h1>
+         </div>
+         <div >
+             <ul id="horizontal-list">
                  <% for (let i of contact_number) { %>
-                   <li> 
-                       <p><%= i.name %></p>
-                       <p> <%= i.number %></p>
-                </li>
+                <div id="container">
+                   <li>
+                       <div id="block-content">
+                       <h1 class="adjacent" ><%= i.name %></h1>
+                       <h1 class="adjacent" > <%= i.number %></h1>
+                
+                       </div>
+                  </li>
+                
                 <!-- on click passing this query to route -->
-                <div>
-                    <button onclick="location.href='/delete-contact/?id=<%=i.id%>'" > Delete </button>
+        
+                    <button onclick="location.href='/delete-contact/?id=<%=i.id%>'" >
+                        <i class="far fa-trash-alt"></i>Delete 
+                   </button>
                 </div>
+                
 
                 <% } %>
                  </ul>
