@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://anuranjan:anu123@cluster0.amjfm.mongodb.net/contact_list_db');
+
+
+mongoose.connect(process.env.DATABASE_URL ,{useNewUrlParser:true,
+  useUnifiedTopology: true,
+});
 
 const db= mongoose.connection;
 
