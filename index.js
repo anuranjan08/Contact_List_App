@@ -36,7 +36,7 @@ app.use(express.static('store'));
 
 //request-response
 app.get('/',function(req,res){
-    Contact.find({},function(err,contacts){
+    contact.find({},function(err,contacts){
         if (err){
             console.log('error in fetching the data',err);
             return;
@@ -51,7 +51,7 @@ app.get('/',function(req,res){
 });
 app.post('/create-action',function(req,res){
       //contacts.push(req.body);
-      Contact.create({
+      contact.create({
           name : req.body.name,
           number : req.body.number
       },function(err,newcontact){
@@ -67,7 +67,7 @@ app.post('/create-action',function(req,res){
 // using query param to delete contact
 app.get('/delete-contact',function(req,res){
     let id=req.query.id;
-    Contact.findOneAndDelete(id,function(err){
+    contact.findOneAndDelete(id,function(err){
         if (err){
             console.log('error in deleting conatcts');
             return;
