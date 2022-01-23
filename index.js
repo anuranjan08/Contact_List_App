@@ -1,10 +1,11 @@
+require('dotenv').config()
 const express=require('express');
-const port=process.env.PORT || process.env.DATABASE;
-const path=require('path');
+const port=process.env.PORT
+const path= require('path');
 const db=require('./config/mongoose');
 const contact=require('./model/contact');
 
-const app=express();
+const app=express(); 
 
 //express to set ejs as view engine
 app.set('view engine','ejs');
